@@ -53,27 +53,27 @@ public class AuthorSol {
 			for (int i = 0; i < s.length; i++) {
 				int j = i - 1;
 				int p = i & 1;
-				System.out.println("j = " + j);
-				System.out.println("p = " + p);
+				//System.out.println("j = " + j);
+				//System.out.println("p = " + p);
 				if (s[i] != '1') {
 					j = Math.min(j, Math.max(last[0][p^1], last[1][p]));
-					System.out.println("(!= 1) j = " + j);
-					System.out.println("last[0][" + (p^1) + "] = " + last[0][p^1]);
-					System.out.println("last[1][" + p + "] = " + last[1][p]);
+					//System.out.println("(!= 1) j = " + j);
+					//System.out.println("last[0][" + (p^1) + "] = " + last[0][p^1]);
+					//System.out.println("last[1][" + p + "] = " + last[1][p]);
 				}
 				if (s[i] != '0') {
 					j = Math.min(j, Math.max(last[0][p], last[1][p^1]));
-					System.out.println("(!= 0) j = " + j);
-					System.out.println("last[0]["+ p + "] = " + last[0][p]);
-					System.out.println("last[1][" + (p^1) + "] = " + last[1][p^1]);
+					//System.out.println("(!= 0) j = " + j);
+					//System.out.println("last[0]["+ p + "] = " + last[0][p]);
+					//System.out.println("last[1][" + (p^1) + "] = " + last[1][p^1]);
 				}
 				ans += i - j;
-				System.out.println("i - j = " + (i-j));
+				//System.out.println("i - j = " + (i-j));
 				if (s[i] != '?') {
 					last[s[i]-'0'][p] = i;
-					System.out.println("[" + (s[i]-'0') + "][" + p + "] = " + i);
+					//System.out.println("[" + (s[i]-'0') + "][" + p + "] = " + i);
 				}
-				System.out.println("------------");
+				//System.out.println("------------");
 			}
 			System.out.println(ans);
 		}
